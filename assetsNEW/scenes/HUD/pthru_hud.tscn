@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://btldeni7oupaw"]
+
+[ext_resource type="Script" path="res://assetsNEW/scenes/HUD/pthru_hud.gd" id="1_mrpog"]
+[ext_resource type="FontFile" uid="uid://byi3u2fpwlxph" path="res://assetsNEW/fonts/Square 721 Extended Bold.otf" id="2_1fbh7"]
+[ext_resource type="FontFile" uid="uid://cep5kfn2ih83v" path="res://assetsNEW/fonts/impact.ttf" id="2_irca1"]
+
+[node name="PthruHUD" type="CanvasLayer"]
+process_mode = 3
+layer = 6
+script = ExtResource("1_mrpog")
+
+[node name="Resets" type="Label" parent="."]
+offset_left = 192.0
+offset_top = 272.0
+offset_right = 256.0
+offset_bottom = 304.0
+theme_override_colors/font_color = Color(1, 0.35, 0.458334, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("2_irca1")
+theme_override_font_sizes/font_size = 20
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TotalTime" type="Label" parent="."]
+offset_top = 492.0
+offset_right = 256.0
+offset_bottom = 512.0
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("2_1fbh7")
+text = "00:00:00.00"
+vertical_alignment = 1

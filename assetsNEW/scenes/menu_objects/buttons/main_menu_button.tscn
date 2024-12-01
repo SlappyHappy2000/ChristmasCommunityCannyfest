@@ -1,0 +1,47 @@
+[gd_scene load_steps=5 format=3 uid="uid://ba3f1x135kcyv"]
+
+[ext_resource type="Theme" uid="uid://crjv5fv10tx15" path="res://assetsNEW/graphics/themes/button_1.tres" id="1_vx3pa"]
+[ext_resource type="Script" path="res://assetsNEW/scenes/menu_objects/buttons/main_menu_button.gd" id="2_xrccs"]
+[ext_resource type="Texture2D" uid="uid://ruoipleiyir6" path="res://assetsNEW/graphics/menu/main_menu/icon_main_main.png" id="3_gad64"]
+[ext_resource type="FontFile" uid="uid://bo3wtasr7gjdr" path="res://assetsNEW/fonts/CherryCreamSoda.ttf" id="4_6nqn4"]
+
+[node name="MainMenuButton" type="Button" node_paths=PackedStringArray("sprite", "main_label", "sub_label")]
+custom_minimum_size = Vector2(384, 80)
+offset_right = 384.0
+offset_bottom = 80.0
+theme = ExtResource("1_vx3pa")
+script = ExtResource("2_xrccs")
+sprite = NodePath("Sprite2D")
+main_label = NodePath("Text")
+sub_label = NodePath("Subtext")
+icon_texture = ExtResource("3_gad64")
+main_text = "Text"
+sub_text = "Subtext"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(48, 40)
+scale = Vector2(0.375, 0.375)
+texture = ExtResource("3_gad64")
+
+[node name="Text" type="Label" parent="."]
+layout_mode = 0
+offset_left = 80.0
+offset_top = 16.0
+offset_right = 368.0
+offset_bottom = 40.0
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("4_6nqn4")
+text = "Text"
+autowrap_mode = 3
+
+[node name="Subtext" type="Label" parent="."]
+layout_mode = 0
+offset_left = 80.0
+offset_top = 40.0
+offset_right = 368.0
+offset_bottom = 72.0
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("4_6nqn4")
+theme_override_font_sizes/font_size = 10
+text = "Subtext"
+autowrap_mode = 3

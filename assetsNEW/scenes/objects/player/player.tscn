@@ -1,0 +1,104 @@
+[gd_scene load_steps=18 format=3 uid="uid://b68tiqag02djh"]
+
+[ext_resource type="Script" path="res://assetsNEW/scenes/objects/player/player.gd" id="1_7ohvu"]
+[ext_resource type="Texture2D" uid="uid://cdly3g3kjhwnt" path="res://assetsNEW/graphics/player/player_skins/pskin0.png" id="2_rtel5"]
+[ext_resource type="Script" path="res://assetsNEW/scenes/objects/player/PSpawn.gd" id="4_qjuwv"]
+[ext_resource type="Script" path="res://assetsNEW/scenes/objects/player/PIdle.gd" id="5_qf273"]
+[ext_resource type="Script" path="res://assetsNEW/scenes/objects/player/PMoving.gd" id="6_gcm8k"]
+[ext_resource type="Script" path="res://assetsNEW/scenes/objects/player/PWin.gd" id="7_cdmgb"]
+[ext_resource type="Script" path="res://assetsNEW/scenes/objects/player/PLose.gd" id="8_f7yvm"]
+[ext_resource type="Script" path="res://assetsNEW/scenes/objects/player/PTelekinetic.gd" id="9_f0vrp"]
+[ext_resource type="Script" path="res://assetsNEW/scenes/objects/player/PJump.gd" id="9_gsfid"]
+[ext_resource type="AudioStream" uid="uid://hofbjuq47wyr" path="res://assetsNEW/sounds/game/levelStart.ogg" id="10_42xay"]
+[ext_resource type="AudioStream" uid="uid://e7gm10shjhg5" path="res://assetsNEW/sounds/player/wallBump.ogg" id="11_o57mq"]
+[ext_resource type="AudioStream" uid="uid://drv28pkreh4ey" path="res://assetsNEW/sounds/player/hit.ogg" id="11_pnov4"]
+[ext_resource type="AudioStream" uid="uid://bektb03jcgu0x" path="res://assetsNEW/sounds/player/cancel.ogg" id="12_5ripr"]
+[ext_resource type="AudioStream" uid="uid://cgo38rfga3rjj" path="res://assetsNEW/sounds/player/grab.ogg" id="12_wg17j"]
+[ext_resource type="AudioStream" uid="uid://cati7k2yyyal2" path="res://assetsNEW/sounds/player/push.ogg" id="13_xdn1m"]
+[ext_resource type="AudioStream" uid="uid://c8tj7n6w6ifaa" path="res://assetsNEW/sounds/player/notif.ogg" id="16_1y3t1"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kgee8"]
+radius = 15.8
+
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("state", "hit_dir")]
+collision_layer = 2
+collision_mask = 9
+script = ExtResource("1_7ohvu")
+state = NodePath("States/PSpawn")
+hit_dir = NodePath("HitDirection")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.064, 0.064)
+texture = ExtResource("2_rtel5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_kgee8")
+
+[node name="HitDirection" type="Line2D" parent="."]
+z_index = 1
+points = PackedVector2Array(0, 0, 0, 0)
+width = 4.0
+default_color = Color(0.501961, 0, 0, 1)
+
+[node name="States" type="Node" parent="."]
+
+[node name="PSpawn" type="Node" parent="States" node_paths=PackedStringArray("player")]
+script = ExtResource("4_qjuwv")
+player = NodePath("../..")
+
+[node name="PIdle" type="Node" parent="States" node_paths=PackedStringArray("player")]
+script = ExtResource("5_qf273")
+player = NodePath("../..")
+
+[node name="PMoving" type="Node" parent="States" node_paths=PackedStringArray("player")]
+script = ExtResource("6_gcm8k")
+player = NodePath("../..")
+
+[node name="PWin" type="Node" parent="States" node_paths=PackedStringArray("player")]
+script = ExtResource("7_cdmgb")
+player = NodePath("../..")
+
+[node name="PLose" type="Node" parent="States" node_paths=PackedStringArray("player")]
+script = ExtResource("8_f7yvm")
+player = NodePath("../..")
+
+[node name="PTelekinetic" type="Node" parent="States" node_paths=PackedStringArray("player")]
+script = ExtResource("9_f0vrp")
+player = NodePath("../..")
+
+[node name="PJump" type="Node" parent="States" node_paths=PackedStringArray("player")]
+script = ExtResource("9_gsfid")
+player = NodePath("../..")
+
+[node name="Sounds" type="Node" parent="."]
+
+[node name="Join" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("10_42xay")
+bus = &"Sound"
+
+[node name="Launched" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("11_pnov4")
+bus = &"Sound"
+
+[node name="Burst" type="AudioStreamPlayer" parent="Sounds"]
+bus = &"Sound"
+
+[node name="WallBump" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("11_o57mq")
+bus = &"Sound"
+
+[node name="Push" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("13_xdn1m")
+bus = &"Sound"
+
+[node name="Grab" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("12_wg17j")
+bus = &"Sound"
+
+[node name="GrabCancel" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("12_5ripr")
+bus = &"Sound"
+
+[node name="PickUp" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("16_1y3t1")
+bus = &"Sound"

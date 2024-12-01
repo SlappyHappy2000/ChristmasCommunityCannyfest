@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://d278t8ghf4m3y"]
+
+[ext_resource type="Script" path="res://assetsNEW/scenes/objects/blocks/switch_block.gd" id="1_cqqqs"]
+[ext_resource type="Texture2D" uid="uid://c1x3qmk8njykq" path="res://assetsNEW/graphics/gimmicks/switchblock.png" id="1_fjesp"]
+[ext_resource type="AudioStream" uid="uid://b4gb6fwikgh03" path="res://assetsNEW/sounds/block/switch.ogg" id="3_wl61u"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a6hj4"]
+size = Vector2(32, 32)
+
+[node name="SwitchBlock" type="StaticBody2D" node_paths=PackedStringArray("graphic", "collision", "hit_sound")]
+script = ExtResource("1_cqqqs")
+graphic = NodePath("Sprite2D")
+collision = NodePath("CollisionShape2D")
+hit_sound = NodePath("hit")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -3.8147e-06)
+scale = Vector2(0.275862, 0.275862)
+texture = ExtResource("1_fjesp")
+hframes = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_a6hj4")
+
+[node name="hit" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_wl61u")
+bus = &"Sound"

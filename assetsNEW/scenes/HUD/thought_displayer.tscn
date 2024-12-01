@@ -1,0 +1,67 @@
+[gd_scene load_steps=9 format=3 uid="uid://nd3b20iqlwk0"]
+
+[ext_resource type="Script" path="res://assetsNEW/scenes/HUD/thought_displayer.gd" id="1_traex"]
+[ext_resource type="Texture2D" uid="uid://ds2qrousbctxj" path="res://assetsNEW/graphics/HUD/catthoughtidisplayer9000.png" id="1_y1fvo"]
+[ext_resource type="Texture2D" uid="uid://bst7kbotp1kvp" path="res://assetsNEW/graphics/HUD/thoughts/Static/static.png" id="2_3d48t"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a5cc5"]
+atlas = ExtResource("2_3d48t")
+region = Rect2(0, 0, 109, 89)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jp3cp"]
+atlas = ExtResource("2_3d48t")
+region = Rect2(109, 0, 109, 89)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iqbbt"]
+atlas = ExtResource("2_3d48t")
+region = Rect2(218, 0, 109, 89)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iroau"]
+atlas = ExtResource("2_3d48t")
+region = Rect2(327, 0, 109, 89)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wesb0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a5cc5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jp3cp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iqbbt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iroau")
+}],
+"loop": true,
+"name": &"default",
+"speed": 20.0
+}]
+
+[node name="ThoughtDisplayer" type="Node2D"]
+script = ExtResource("1_traex")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(109, 89)
+offset_left = 41.0
+offset_top = 343.0
+offset_right = 150.0
+offset_bottom = 432.0
+color = Color(0.0911214, 0.0911215, 0.0911214, 1)
+
+[node name="Thought" type="Sprite2D" parent="."]
+position = Vector2(95, 387)
+scale = Vector2(1.01, 1.01)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(95, 387)
+scale = Vector2(1.01, 1.01)
+sprite_frames = SubResource("SpriteFrames_wesb0")
+autoplay = "default"
+
+[node name="ThoughtBubble" type="Sprite2D" parent="."]
+position = Vector2(96, 416)
+scale = Vector2(0.148607, 0.148607)
+texture = ExtResource("1_y1fvo")

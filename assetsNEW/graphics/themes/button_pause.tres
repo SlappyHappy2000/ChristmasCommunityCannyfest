@@ -1,0 +1,40 @@
+[gd_resource type="Theme" load_steps=7 format=3 uid="uid://m0cswpp3mo53"]
+
+[ext_resource type="FontFile" uid="uid://d2lt34t0wpe25" path="res://assetsNEW/fonts/Omnes Pro Bold.otf" id="1_gqfaf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tf85j"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ykp2p"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6wcof"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_m1uss"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_r7qm6"]
+
+[resource]
+default_font = ExtResource("1_gqfaf")
+default_font_size = 20
+Button/colors/font_color = Color(0.85, 0.85, 0.85, 1)
+Button/colors/font_disabled_color = Color(0.875, 0.875, 0.875, 0.5)
+Button/colors/font_focus_color = Color(0.85, 0.85, 0.85, 1)
+Button/colors/font_hover_color = Color(0.5525, 0.85, 0.85, 1)
+Button/colors/font_hover_pressed_color = Color(1, 1, 0, 1)
+Button/colors/font_outline_color = Color(0, 0, 0, 1)
+Button/colors/font_pressed_color = Color(1, 1, 0, 1)
+Button/colors/icon_disabled_color = Color(1, 1, 1, 0.4)
+Button/colors/icon_focus_color = Color(1, 1, 1, 1)
+Button/colors/icon_hover_color = Color(1, 1, 1, 1)
+Button/colors/icon_hover_pressed_color = Color(1, 1, 1, 1)
+Button/colors/icon_normal_color = Color(1, 1, 1, 1)
+Button/colors/icon_pressed_color = Color(1, 1, 1, 1)
+Button/constants/h_separation = 4
+Button/constants/icon_max_width = 0
+Button/constants/outline_size = 6
+Button/font_sizes/font_size = 20
+Button/fonts/font = ExtResource("1_gqfaf")
+Button/styles/disabled = SubResource("StyleBoxEmpty_tf85j")
+Button/styles/focus = SubResource("StyleBoxEmpty_ykp2p")
+Button/styles/hover = SubResource("StyleBoxEmpty_6wcof")
+Button/styles/normal = SubResource("StyleBoxEmpty_m1uss")
+Button/styles/pressed = SubResource("StyleBoxEmpty_r7qm6")

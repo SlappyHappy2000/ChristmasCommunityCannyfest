@@ -1,0 +1,91 @@
+[gd_scene load_steps=12 format=3 uid="uid://pckk4rg2hklu"]
+
+[ext_resource type="Script" path="res://assetsNEW/scenes/objects/baddies/baddie_spawner.gd" id="1_f3ov1"]
+[ext_resource type="Texture2D" uid="uid://qokiavyxqwk6" path="res://assetsNEW/graphics/enemy/spawner.png" id="1_t62x2"]
+[ext_resource type="PackedScene" uid="uid://ds53r8hpj8qk0" path="res://assetsNEW/scenes/objects/misc/score_popup.tscn" id="3_1ukhn"]
+[ext_resource type="AudioStream" uid="uid://iani2132jvat" path="res://assetsNEW/sounds/collectibles/coin.ogg" id="4_shno5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q314v"]
+atlas = ExtResource("1_t62x2")
+region = Rect2(0, 0, 138, 138)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8tuac"]
+atlas = ExtResource("1_t62x2")
+region = Rect2(138, 0, 138, 138)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xg2sn"]
+atlas = ExtResource("1_t62x2")
+region = Rect2(276, 0, 138, 138)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_37dfv"]
+atlas = ExtResource("1_t62x2")
+region = Rect2(414, 0, 138, 138)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dyh8q"]
+atlas = ExtResource("1_t62x2")
+region = Rect2(0, 0, 138, 138)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ltgcn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q314v")
+}],
+"loop": false,
+"name": &"Closed",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8tuac")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xg2sn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_37dfv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xg2sn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8tuac")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dyh8q")
+}],
+"loop": false,
+"name": &"Open",
+"speed": 15.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8brmq"]
+size = Vector2(32, 32)
+
+[node name="BaddieSpawner" type="Area2D" node_paths=PackedStringArray("collect_sound", "graphic", "collision", "popup")]
+collision_layer = 16
+collision_mask = 2
+script = ExtResource("1_f3ov1")
+collect_sound = NodePath("collect")
+graphic = NodePath("Door")
+collision = NodePath("CollisionShape2D")
+popup = NodePath("ScorePopup")
+death_FX = "poof"
+score_value = 1000
+
+[node name="Door" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -4.76837e-07)
+scale = Vector2(0.231884, 0.231884)
+sprite_frames = SubResource("SpriteFrames_ltgcn")
+animation = &"Closed"
+autoplay = "Closed"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_8brmq")
+
+[node name="ScorePopup" parent="." node_paths=PackedStringArray("object") instance=ExtResource("3_1ukhn")]
+object = NodePath("..")
+
+[node name="collect" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_shno5")
+bus = &"Sound"

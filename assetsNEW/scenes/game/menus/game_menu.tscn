@@ -1,0 +1,225 @@
+[gd_scene load_steps=29 format=3 uid="uid://80psjtlfescx"]
+
+[ext_resource type="Script" path="res://assetsNEW/scenes/game/menus/menu.gd" id="1_inwge"]
+[ext_resource type="Texture2D" uid="uid://b4qt7wocralc5" path="res://assetsNEW/graphics/menu/menu_panel.png" id="2_focrm"]
+[ext_resource type="Texture2D" uid="uid://cbxp3nnmtw62a" path="res://assetsNEW/graphics/menu/metal_sheet.png" id="2_vradx"]
+[ext_resource type="Texture2D" uid="uid://bn1m5dxbs4qmg" path="res://assetsNEW/graphics/menu/back.png" id="3_gabbp"]
+[ext_resource type="PackedScene" uid="uid://dg3prkfbiat22" path="res://assetsNEW/scenes/menu_objects/buttons/fake_button.tscn" id="4_gnp55"]
+[ext_resource type="FontFile" uid="uid://bel3uqkt55264" path="res://assetsNEW/fonts/yoshisst.ttf" id="5_dnbkb"]
+[ext_resource type="PackedScene" uid="uid://ba3f1x135kcyv" path="res://assetsNEW/scenes/menu_objects/buttons/main_menu_button.tscn" id="5_ukuka"]
+[ext_resource type="Texture2D" uid="uid://h8sxxw5c6y" path="res://assetsNEW/graphics/menu/icon_lock.png" id="6_4qhfx"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dr25h"]
+atlas = ExtResource("3_gabbp")
+region = Rect2(0, 0, 75, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m1knt"]
+atlas = ExtResource("3_gabbp")
+region = Rect2(75, 0, 75, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_apfjf"]
+atlas = ExtResource("3_gabbp")
+region = Rect2(150, 0, 75, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_03b5w"]
+atlas = ExtResource("3_gabbp")
+region = Rect2(225, 0, 75, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n60ki"]
+atlas = ExtResource("3_gabbp")
+region = Rect2(300, 0, 75, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5h8pp"]
+atlas = ExtResource("3_gabbp")
+region = Rect2(375, 0, 75, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ppjpq"]
+atlas = ExtResource("3_gabbp")
+region = Rect2(450, 0, 75, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cfpjv"]
+atlas = ExtResource("3_gabbp")
+region = Rect2(525, 0, 75, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3dgib"]
+atlas = ExtResource("3_gabbp")
+region = Rect2(600, 0, 75, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lqln5"]
+atlas = ExtResource("3_gabbp")
+region = Rect2(675, 0, 75, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gaa03"]
+atlas = ExtResource("3_gabbp")
+region = Rect2(750, 0, 75, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1u4ee"]
+atlas = ExtResource("3_gabbp")
+region = Rect2(825, 0, 75, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vr5i0"]
+atlas = ExtResource("3_gabbp")
+region = Rect2(900, 0, 75, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5o5gc"]
+atlas = ExtResource("3_gabbp")
+region = Rect2(975, 0, 75, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_spbbu"]
+atlas = ExtResource("3_gabbp")
+region = Rect2(1050, 0, 75, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kvdkg"]
+atlas = ExtResource("3_gabbp")
+region = Rect2(1125, 0, 75, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pdneq"]
+atlas = ExtResource("3_gabbp")
+region = Rect2(1200, 0, 75, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b2eg7"]
+atlas = ExtResource("3_gabbp")
+region = Rect2(1275, 0, 75, 42)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_h1kh4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dr25h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m1knt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_apfjf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_03b5w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n60ki")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5h8pp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ppjpq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cfpjv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3dgib")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lqln5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gaa03")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1u4ee")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vr5i0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5o5gc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_spbbu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kvdkg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pdneq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b2eg7")
+}],
+"loop": true,
+"name": &"default",
+"speed": 20.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5ubi4"]
+size = Vector2(64, 40)
+
+[node name="GameMenu" type="Node2D" node_paths=PackedStringArray("button_group")]
+script = ExtResource("1_inwge")
+ID = "B-3"
+bg_color = Color(0.25, 0.75, 1, 1)
+music = 1
+button_group = NodePath("Control/ScrollContainer/VBoxContainer")
+
+[node name="panel_bg" type="Sprite2D" parent="."]
+position = Vector2(512, 60)
+scale = Vector2(0.64, 0.2)
+texture = ExtResource("2_vradx")
+
+[node name="panel" type="Sprite2D" parent="."]
+position = Vector2(512, 64)
+texture = ExtResource("2_focrm")
+
+[node name="FakeButton" parent="." node_paths=PackedStringArray("parent") instance=ExtResource("4_gnp55")]
+position = Vector2(296, 24)
+parent = NodePath("..")
+GO_TO = 2
+
+[node name="AnimatedSprite2D" parent="FakeButton" index="0"]
+sprite_frames = SubResource("SpriteFrames_h1kh4")
+autoplay = "default"
+
+[node name="CollisionShape2D" parent="FakeButton" index="1"]
+shape = SubResource("RectangleShape2D_5ubi4")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 256.0
+offset_top = 32.0
+offset_right = 768.0
+offset_bottom = 96.0
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("5_dnbkb")
+theme_override_font_sizes/font_size = 25
+text = "MENU_MainGame"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 320.0
+offset_top = 128.0
+offset_right = 704.0
+offset_bottom = 512.0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+follow_focus = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 12
+
+[node name="MainMenuButton4" parent="Control/ScrollContainer/VBoxContainer" instance=ExtResource("5_ukuka")]
+layout_mode = 2
+GO_TO = 6
+main_text = "Select Playthrough"
+sub_text = "This is the main game!!! The one that you came here for, the one with the uhh cats and golf and stuff"
+
+[node name="MainMenuButton2" parent="Control/ScrollContainer/VBoxContainer" instance=ExtResource("5_ukuka")]
+layout_mode = 2
+disabled = true
+icon_texture = ExtResource("6_4qhfx")
+main_text = "LOCKED"
+sub_text = "Check back in a future release!"
+
+[editable path="FakeButton"]

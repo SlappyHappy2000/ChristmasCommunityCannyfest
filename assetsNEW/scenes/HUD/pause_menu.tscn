@@ -1,0 +1,265 @@
+[gd_scene load_steps=22 format=3 uid="uid://bhko8glrwkdku"]
+
+[ext_resource type="Script" path="res://assetsNEW/scenes/HUD/pause_menu.gd" id="1_v22bu"]
+[ext_resource type="Texture2D" uid="uid://cfjs3aahvjypo" path="res://assetsNEW/graphics/HUD/paused_new.png" id="4_8wmuk"]
+[ext_resource type="Theme" uid="uid://m0cswpp3mo53" path="res://assetsNEW/graphics/themes/button_pause.tres" id="4_gpppa"]
+[ext_resource type="Script" path="res://assetsNEW/scenes/menu_objects/buttons/pause_button.gd" id="5_bswni"]
+[ext_resource type="Texture2D" uid="uid://cdly3g3kjhwnt" path="res://assetsNEW/graphics/player/player_skins/pskin0.png" id="6_t8kpr"]
+[ext_resource type="Texture2D" uid="uid://bcey2yajd3frv" path="res://assetsNEW/graphics/HUD/pause_filter.png" id="7_0nyh4"]
+[ext_resource type="AudioStream" uid="uid://bqujy4igc5wse" path="res://assetsNEW/sounds/game/pause.ogg" id="7_1ho2h"]
+
+[sub_resource type="Animation" id="Animation_nbbs5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.140625, 0.140625)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:skew")
+tracks/1/interp = 3
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(646, 438)]
+}
+
+[sub_resource type="Animation" id="Animation_f1nff"]
+resource_name = "dancing"
+length = 0.8
+loop_mode = 1
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(0.109375, 0.160156), Vector2(0.171875, 0.0886361), Vector2(0.109375, 0.160156), Vector2(0.171875, 0.0886361), Vector2(0.109375, 0.160156)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:skew")
+tracks/1/interp = 3
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [0.324631, 0.0, -0.324631, 0.0, 0.324631]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(656, 328), Vector2(640, 344), Vector2(632, 328), Vector2(640, 344), Vector2(656, 328)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wcfpd"]
+_data = {
+"RESET": SubResource("Animation_nbbs5"),
+"dancing": SubResource("Animation_f1nff")
+}
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l3ncw"]
+atlas = ExtResource("7_0nyh4")
+region = Rect2(0, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hfq78"]
+atlas = ExtResource("7_0nyh4")
+region = Rect2(512, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_84rd5"]
+atlas = ExtResource("7_0nyh4")
+region = Rect2(1024, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_40j8m"]
+atlas = ExtResource("7_0nyh4")
+region = Rect2(1536, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y106q"]
+atlas = ExtResource("7_0nyh4")
+region = Rect2(2048, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ruvjt"]
+atlas = ExtResource("7_0nyh4")
+region = Rect2(2560, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f5l37"]
+atlas = ExtResource("7_0nyh4")
+region = Rect2(3072, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_41uox"]
+atlas = ExtResource("7_0nyh4")
+region = Rect2(3584, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w8ly6"]
+atlas = ExtResource("7_0nyh4")
+region = Rect2(4096, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pbhnv"]
+atlas = ExtResource("7_0nyh4")
+region = Rect2(4608, 0, 512, 512)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bomsi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l3ncw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hfq78")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_84rd5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_40j8m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y106q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ruvjt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f5l37")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_41uox")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w8ly6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pbhnv")
+}],
+"loop": true,
+"name": &"default",
+"speed": 30.0
+}]
+
+[node name="PauseMenu" type="Node2D"]
+script = ExtResource("1_v22bu")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 10
+
+[node name="darkness" type="Node2D" parent="CanvasLayer"]
+
+[node name="a" type="Polygon2D" parent="CanvasLayer/darkness"]
+color = Color(0, 0, 0, 0.392157)
+polygon = PackedVector2Array(256, 128, 768, 0, 768, 384, 256, 512)
+
+[node name="b" type="Polygon2D" parent="CanvasLayer/darkness"]
+color = Color(0.23, 0, 0, 0.392157)
+polygon = PackedVector2Array(256, 0, 768, 0, 256, 128)
+
+[node name="c" type="Polygon2D" parent="CanvasLayer/darkness"]
+color = Color(0.23, 0, 0, 0.392157)
+polygon = PackedVector2Array(768, 384, 768, 512, 256, 512)
+
+[node name="paused" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(512, 88)
+texture = ExtResource("4_8wmuk")
+
+[node name="PauseButtons" type="Node2D" parent="CanvasLayer"]
+
+[node name="Resume" type="Button" parent="CanvasLayer/PauseButtons"]
+offset_left = 272.0
+offset_top = 192.0
+offset_right = 576.0
+offset_bottom = 216.0
+theme = ExtResource("4_gpppa")
+text = "Resume Level"
+alignment = 0
+script = ExtResource("5_bswni")
+does_back = true
+
+[node name="Settings" type="Button" parent="CanvasLayer/PauseButtons"]
+offset_left = 272.0
+offset_top = 224.0
+offset_right = 576.0
+offset_bottom = 248.0
+theme = ExtResource("4_gpppa")
+text = "Settings"
+alignment = 0
+script = ExtResource("5_bswni")
+GO_TO = 9
+does_overlay = true
+
+[node name="ToSelect" type="Button" parent="CanvasLayer/PauseButtons"]
+offset_left = 272.0
+offset_top = 256.0
+offset_right = 576.0
+offset_bottom = 280.0
+theme = ExtResource("4_gpppa")
+text = "Quit to Level Select"
+alignment = 0
+script = ExtResource("5_bswni")
+GO_TO = 3
+
+[node name="ToMenu" type="Button" parent="CanvasLayer/PauseButtons"]
+offset_left = 272.0
+offset_top = 288.0
+offset_right = 576.0
+offset_bottom = 312.0
+theme = ExtResource("4_gpppa")
+text = "Quit to Main Menu"
+alignment = 0
+script = ExtResource("5_bswni")
+GO_TO = 2
+
+[node name="dancer" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(646, 438)
+scale = Vector2(0.140625, 0.140625)
+texture = ExtResource("6_t8kpr")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/dancer"]
+libraries = {
+"": SubResource("AnimationLibrary_wcfpd")
+}
+autoplay = "dancing"
+
+[node name="filter" type="AnimatedSprite2D" parent="CanvasLayer"]
+position = Vector2(512, 256)
+sprite_frames = SubResource("SpriteFrames_bomsi")
+autoplay = "default"
+
+[node name="sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_1ho2h")
+bus = &"Sound"

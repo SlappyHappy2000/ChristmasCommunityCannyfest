@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://wgr23py8fg1b"]
+
+[ext_resource type="Script" path="res://assetsNEW/scenes/objects/ghost/ghost.gd" id="1_78wie"]
+[ext_resource type="Texture2D" uid="uid://bu4dwr7l6pwcv" path="res://assetsNEW/graphics/player/ghost_skins/gskin0.png" id="2_cypk8"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6lof2"]
+radius = 16.2788
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8j3li"]
+radius = 12.1655
+
+[node name="Ghost" type="CharacterBody2D"]
+collision_layer = 4
+collision_mask = 4
+script = ExtResource("1_78wie")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.064, 0.064)
+texture = ExtResource("2_cypk8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_6lof2")
+
+[node name="Hitbox" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+shape = SubResource("CircleShape2D_8j3li")
+debug_color = Color(0.751513, 0.458596, 1.92523e-07, 0.42)
+
+[connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]

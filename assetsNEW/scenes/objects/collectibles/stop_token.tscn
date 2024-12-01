@@ -1,0 +1,47 @@
+[gd_scene load_steps=7 format=3 uid="uid://djb664usmchpa"]
+
+[ext_resource type="Script" path="res://assetsNEW/scenes/objects/collectibles/collectible.gd" id="1_j8vdi"]
+[ext_resource type="Texture2D" uid="uid://ddfrmv1v83r3t" path="res://assetsNEW/graphics/collectibles/stop_token.png" id="2_023lv"]
+[ext_resource type="PackedScene" uid="uid://ds53r8hpj8qk0" path="res://assetsNEW/scenes/objects/misc/score_popup.tscn" id="3_kuc8l"]
+[ext_resource type="AudioStream" uid="uid://n4geuuaeg764" path="res://assetsNEW/sounds/collectibles/boost.ogg" id="4_38af8"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6k0i4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_023lv")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8ol7m"]
+radius = 10.05
+
+[node name="StopToken" type="Area2D" node_paths=PackedStringArray("collect_sound", "graphic", "collision", "popup")]
+collision_layer = 16
+collision_mask = 2
+script = ExtResource("1_j8vdi")
+collect_sound = NodePath("collect")
+graphic = NodePath("AnimatedSprite2D")
+collision = NodePath("CollisionShape2D")
+popup = NodePath("ScorePopup")
+death_FX = "NULL"
+does_speed = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(9.53674e-07, 9.53674e-07)
+scale = Vector2(0.444444, 0.444444)
+sprite_frames = SubResource("SpriteFrames_6k0i4")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_8ol7m")
+
+[node name="ScorePopup" parent="." node_paths=PackedStringArray("object") instance=ExtResource("3_kuc8l")]
+object = NodePath("..")
+
+[node name="collect" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_38af8")
+bus = &"Sound"

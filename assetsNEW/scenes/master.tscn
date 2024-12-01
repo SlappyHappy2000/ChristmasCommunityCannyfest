@@ -1,0 +1,78 @@
+[gd_scene load_steps=24 format=3 uid="uid://blipbbly572f5"]
+
+[ext_resource type="Script" path="res://assetsNEW/scenes/master.gd" id="1_1aldo"]
+[ext_resource type="PackedScene" uid="uid://vxqmxmctdicc" path="res://assetsNEW/scenes/game/menus/pregame/game_loader.tscn" id="2_0sh2s"]
+[ext_resource type="PackedScene" uid="uid://cqebwf8uypjsu" path="res://assetsNEW/scenes/game/menus/title_screen.tscn" id="3_y7irr"]
+[ext_resource type="PackedScene" uid="uid://ctr8g70bg2aq1" path="res://assetsNEW/scenes/game/menus/main_menu.tscn" id="4_xoufs"]
+[ext_resource type="PackedScene" uid="uid://80psjtlfescx" path="res://assetsNEW/scenes/game/menus/game_menu.tscn" id="5_casiv"]
+[ext_resource type="PackedScene" uid="uid://c1c5xbmwfgw1t" path="res://assetsNEW/scenes/game/menus/game/pthru.tscn" id="6_00qs5"]
+[ext_resource type="Texture2D" uid="uid://cd5v27phv6lcq" path="res://assetsNEW/graphics/HUD/hud_bg.png" id="6_1ww0t"]
+[ext_resource type="PackedScene" uid="uid://cnl5rvtknutse" path="res://assetsNEW/scenes/game/menus/settings_menu.tscn" id="6_w4qfm"]
+[ext_resource type="PackedScene" uid="uid://86h2p4y0prc" path="res://assetsNEW/scenes/game/menus/extras_menu.tscn" id="7_t8x5k"]
+[ext_resource type="Texture2D" uid="uid://24tybug7sy4" path="res://assetsNEW/graphics/HUD/logo/logo_en.png" id="7_wt0r6"]
+[ext_resource type="PackedScene" uid="uid://bhko8glrwkdku" path="res://assetsNEW/scenes/HUD/pause_menu.tscn" id="7_ye1kr"]
+[ext_resource type="Texture2D" uid="uid://di4jkvt166n5s" path="res://assetsNEW/graphics/HUD/hud_border.png" id="8_72yve"]
+[ext_resource type="PackedScene" uid="uid://cfk6i5hys5vi0" path="res://assetsNEW/scenes/game/menus/extras/credits.tscn" id="8_nhbrm"]
+[ext_resource type="PackedScene" uid="uid://bpp175dpw27rn" path="res://assetsNEW/scenes/game/menus/game/world_results.tscn" id="8_tb7k7"]
+[ext_resource type="PackedScene" uid="uid://bwrjqjf52a50h" path="res://assetsNEW/scenes/game/menus/exit_game.tscn" id="9_mgbs8"]
+[ext_resource type="PackedScene" uid="uid://bs8thjsi7lr0p" path="res://assetsNEW/scenes/game/menus/extras/something_funny.tscn" id="9_n2vu6"]
+[ext_resource type="Texture2D" uid="uid://cdly3g3kjhwnt" path="res://assetsNEW/graphics/player/player_skins/pskin0.png" id="10_escqf"]
+[ext_resource type="PackedScene" uid="uid://nd3b20iqlwk0" path="res://assetsNEW/scenes/HUD/thought_displayer.tscn" id="10_hp4r2"]
+[ext_resource type="AudioStream" uid="uid://bj846ieasfrq1" path="res://assetsNEW/music/musTitle.ogg" id="10_vqtrm"]
+[ext_resource type="AudioStream" uid="uid://llxccbeml7y4" path="res://assetsNEW/music/musW0.ogg" id="11_jvkwr"]
+[ext_resource type="AudioStream" uid="uid://qdys1unle2ea" path="res://assetsNEW/music/musW1.ogg" id="12_l7sko"]
+[ext_resource type="AudioStream" uid="uid://baqe62p1k8ywb" path="res://assetsNEW/music/musW2.ogg" id="13_t8sij"]
+[ext_resource type="AudioStream" uid="uid://dmp2fbgtt1q62" path="res://assetsNEW/music/musW3.ogg" id="14_vj38o"]
+
+[node name="Master" type="Node2D" node_paths=PackedStringArray("songs")]
+script = ExtResource("1_1aldo")
+packed_game_scenes = Array[PackedScene]([ExtResource("2_0sh2s"), ExtResource("3_y7irr"), ExtResource("4_xoufs"), ExtResource("5_casiv"), null, null, ExtResource("6_00qs5"), ExtResource("7_ye1kr"), ExtResource("8_tb7k7"), ExtResource("6_w4qfm"), null, ExtResource("7_t8x5k"), ExtResource("8_nhbrm"), ExtResource("9_n2vu6"), ExtResource("9_mgbs8")])
+songs = [NodePath("Music/Title"), NodePath("Music/Menu"), NodePath("Music/W0"), NodePath("Music/W1"), NodePath("Music/W2"), NodePath("Music/W3")]
+
+[node name="HUD" type="CanvasLayer" parent="."]
+
+[node name="Bg" type="Sprite2D" parent="HUD"]
+position = Vector2(128, 256)
+texture = ExtResource("6_1ww0t")
+
+[node name="GameTitle" type="Sprite2D" parent="HUD"]
+position = Vector2(124, 68)
+scale = Vector2(0.714697, 0.786127)
+texture = ExtResource("7_wt0r6")
+
+[node name="Bar" type="Sprite2D" parent="HUD"]
+position = Vector2(252, 256)
+scale = Vector2(0.999999, 64)
+texture = ExtResource("8_72yve")
+
+[node name="ThoughtDisplayer" parent="HUD" instance=ExtResource("10_hp4r2")]
+
+[node name="Thinker" type="Sprite2D" parent="HUD"]
+position = Vector2(204, 460)
+scale = Vector2(0.171875, 0.171875)
+texture = ExtResource("10_escqf")
+
+[node name="Music" type="Node" parent="."]
+
+[node name="Title" type="AudioStreamPlayer" parent="Music"]
+stream = ExtResource("10_vqtrm")
+
+[node name="Menu" type="AudioStreamPlayer" parent="Music"]
+stream = ExtResource("10_vqtrm")
+bus = &"Music"
+
+[node name="W0" type="AudioStreamPlayer" parent="Music"]
+stream = ExtResource("11_jvkwr")
+bus = &"Music"
+
+[node name="W1" type="AudioStreamPlayer" parent="Music"]
+stream = ExtResource("12_l7sko")
+bus = &"Music"
+
+[node name="W2" type="AudioStreamPlayer" parent="Music"]
+stream = ExtResource("13_t8sij")
+bus = &"Music"
+
+[node name="W3" type="AudioStreamPlayer" parent="Music"]
+stream = ExtResource("14_vj38o")
+bus = &"Music"

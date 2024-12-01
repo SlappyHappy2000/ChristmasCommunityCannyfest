@@ -1,0 +1,51 @@
+[gd_scene load_steps=8 format=3 uid="uid://cf50ae18e6st6"]
+
+[ext_resource type="Script" path="res://assetsNEW/scenes/objects/baddies/baddie.gd" id="1_fx3ol"]
+[ext_resource type="Texture2D" uid="uid://b5kccmd2xymr4" path="res://assetsNEW/graphics/enemy/car.png" id="2_rauhc"]
+[ext_resource type="PackedScene" uid="uid://ds53r8hpj8qk0" path="res://assetsNEW/scenes/objects/misc/score_popup.tscn" id="3_txmos"]
+[ext_resource type="AudioStream" uid="uid://bowj8kydwhi8q" path="res://assetsNEW/sounds/enemy/carDeath.ogg" id="4_ebiwc"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_et5gj"]
+atlas = ExtResource("2_rauhc")
+region = Rect2(0, 0, 800, 400)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_li7mi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_et5gj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tey71"]
+size = Vector2(16, 16)
+
+[node name="Car" type="CharacterBody2D" node_paths=PackedStringArray("death_sound", "graphic", "collision", "popup")]
+collision_layer = 8
+collision_mask = 0
+script = ExtResource("1_fx3ol")
+death_sound = NodePath("death")
+death_sound_pitch = Vector2(1, 1)
+graphic = NodePath("Sprite2D")
+collision = NodePath("CollisionShape2D")
+popup = NodePath("ScorePopup")
+death_FX = "poof"
+speed = 100
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-1.52588e-05, -2.38419e-07)
+scale = Vector2(0.04, 0.06)
+sprite_frames = SubResource("SpriteFrames_li7mi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_tey71")
+
+[node name="ScorePopup" parent="." node_paths=PackedStringArray("object") instance=ExtResource("3_txmos")]
+object = NodePath("..")
+
+[node name="death" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_ebiwc")
+bus = &"Sound"

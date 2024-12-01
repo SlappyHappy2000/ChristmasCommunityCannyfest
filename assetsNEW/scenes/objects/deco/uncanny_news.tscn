@@ -1,0 +1,94 @@
+[gd_scene load_steps=13 format=3 uid="uid://dvw8raxkkrjs1"]
+
+[ext_resource type="Script" path="res://assetsNEW/scenes/objects/deco/uncanny_news.gd" id="1_il650"]
+[ext_resource type="Texture2D" uid="uid://cbxp3nnmtw62a" path="res://assetsNEW/graphics/menu/metal_sheet.png" id="1_splqp"]
+[ext_resource type="Texture2D" uid="uid://bplxxb1qvd27a" path="res://assetsNEW/graphics/stage/deco/W2/UCN.png" id="2_ynd6t"]
+[ext_resource type="Texture2D" uid="uid://haypcmebo5el" path="res://assetsNEW/graphics/stage/deco/W2/newsicon1.png" id="3_vl6h8"]
+[ext_resource type="Texture2D" uid="uid://bq0bsiyg1v5of" path="res://assetsNEW/graphics/stage/deco/W2/newsgradient.png" id="4_ws868"]
+[ext_resource type="FontFile" uid="uid://bb152qtgi78wm" path="res://assetsNEW/fonts/times new roman.ttf" id="5_7volf"]
+[ext_resource type="FontFile" uid="uid://d2lt34t0wpe25" path="res://assetsNEW/fonts/Omnes Pro Bold.otf" id="6_ey0gy"]
+[ext_resource type="Texture2D" uid="uid://ca61xbjxyu1lr" path="res://assetsNEW/graphics/misc/blank_square.png" id="8_826bg"]
+[ext_resource type="Texture2D" uid="uid://bu4dwr7l6pwcv" path="res://assetsNEW/graphics/player/ghost_skins/gskin0.png" id="9_dvdi4"]
+[ext_resource type="Texture2D" uid="uid://dg2w8ba5h3246" path="res://assetsNEW/graphics/stage/deco/W2/news_intro.png" id="10_4cyat"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ltm5h"]
+atlas = ExtResource("10_4cyat")
+region = Rect2(0, 0, 256, 256)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8ytoo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ltm5h")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="UncannyNews" type="CanvasLayer"]
+layer = -5
+script = ExtResource("1_il650")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(512, 464)
+scale = Vector2(0.64, 0.16)
+texture = ExtResource("1_splqp")
+
+[node name="Sprite2D4" type="Sprite2D" parent="."]
+modulate = Color(1, 0, 1, 1)
+position = Vector2(636, 438)
+scale = Vector2(0.634921, 0.60274)
+texture = ExtResource("2_ynd6t")
+
+[node name="Sprite2D6" type="Sprite2D" parent="."]
+modulate = Color(1, 0.109804, 1, 1)
+position = Vector2(320.698, 452)
+scale = Vector2(0.736065, 0.72)
+texture = ExtResource("3_vl6h8")
+
+[node name="Sprite2D5" type="Sprite2D" parent="."]
+position = Vector2(512, 496)
+scale = Vector2(16, 1)
+texture = ExtResource("4_ws868")
+
+[node name="Label" type="Label" parent="."]
+z_index = 2
+offset_left = 576.0
+offset_top = 448.0
+offset_right = 696.0
+offset_bottom = 480.0
+theme_override_fonts/font = ExtResource("5_7volf")
+theme_override_font_sizes/font_size = 12
+text = "Uncanny Cat News"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="NewsText" type="Label" parent="."]
+z_index = 2
+offset_left = 800.0
+offset_top = 480.0
+offset_right = 896.0
+offset_bottom = 512.0
+theme_override_fonts/font = ExtResource("6_ey0gy")
+theme_override_font_sizes/font_size = 15
+text = "Placeholder"
+vertical_alignment = 1
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+modulate = Color(0, 0, 1, 1)
+position = Vector2(724, 448)
+scale = Vector2(15, 15)
+texture = ExtResource("8_826bg")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(724, 448)
+scale = Vector2(0.109375, 0.109375)
+texture = ExtResource("9_dvdi4")
+
+[node name="NewsIntro" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(512, 256)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_8ytoo")

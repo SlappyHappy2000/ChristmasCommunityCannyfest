@@ -1,0 +1,46 @@
+[gd_scene load_steps=7 format=3 uid="uid://piiexm01bud6"]
+
+[ext_resource type="Script" path="res://assetsNEW/scenes/objects/collectibles/collectible.gd" id="1_psdao"]
+[ext_resource type="Texture2D" uid="uid://bbi3g78usopgl" path="res://assetsNEW/graphics/collectibles/coin.png" id="2_iujjq"]
+[ext_resource type="AudioStream" uid="uid://iani2132jvat" path="res://assetsNEW/sounds/collectibles/coin.ogg" id="3_n6b8o"]
+[ext_resource type="PackedScene" uid="uid://ds53r8hpj8qk0" path="res://assetsNEW/scenes/objects/misc/score_popup.tscn" id="3_rp82l"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_emntq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_iujjq")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jlnin"]
+radius = 11.1803
+
+[node name="Coin" type="Area2D" node_paths=PackedStringArray("collect_sound", "graphic", "collision", "popup")]
+collision_layer = 16
+collision_mask = 2
+script = ExtResource("1_psdao")
+collect_sound = NodePath("collect")
+graphic = NodePath("AnimatedSprite2D")
+collision = NodePath("CollisionShape2D")
+popup = NodePath("ScorePopup")
+death_FX = "NULL"
+score_value = 50
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.0234375, 0.0234375)
+sprite_frames = SubResource("SpriteFrames_emntq")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_jlnin")
+
+[node name="ScorePopup" parent="." node_paths=PackedStringArray("object") instance=ExtResource("3_rp82l")]
+object = NodePath("..")
+
+[node name="collect" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_n6b8o")
+bus = &"Sound"

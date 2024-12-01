@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://bl36wfyj200ad"]
+
+[ext_resource type="Texture2D" uid="uid://s5aqm24w6n12" path="res://assetsNEW/graphics/stage/deco/W2/screen_overlay.png" id="1_mp5u5"]
+[ext_resource type="Script" path="res://assetsNEW/scenes/objects/deco/screen_overlay.gd" id="1_npb47"]
+
+[node name="Screen Overlay" type="Polygon2D"]
+modulate = Color(1, 1, 1, 0.254902)
+texture_repeat = 2
+texture = ExtResource("1_mp5u5")
+script = ExtResource("1_npb47")

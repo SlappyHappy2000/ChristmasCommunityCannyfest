@@ -1,0 +1,58 @@
+[gd_scene load_steps=9 format=3 uid="uid://bdnhpxy3ifxk"]
+
+[ext_resource type="Script" path="res://assetsNEW/scenes/objects/blocks/key_door.gd" id="1_76lgk"]
+[ext_resource type="Texture2D" uid="uid://crvn6ckc7viyx" path="res://assetsNEW/graphics/gimmicks/dblock.png" id="2_bu86e"]
+[ext_resource type="Shader" path="res://assetsNEW/graphics/shaders/colorswap.gdshader" id="2_em2rs"]
+[ext_resource type="Texture2D" uid="uid://1gxwbdtdprpe" path="res://assetsNEW/graphics/gimmicks/lock.png" id="3_b0caq"]
+[ext_resource type="AudioStream" uid="uid://c36fyqdao53br" path="res://assetsNEW/sounds/block/keydoor.ogg" id="4_gtlvk"]
+[ext_resource type="PackedScene" uid="uid://ds53r8hpj8qk0" path="res://assetsNEW/scenes/objects/misc/score_popup.tscn" id="5_tcnqt"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_sm657"]
+resource_local_to_scene = true
+shader = ExtResource("2_em2rs")
+shader_parameter/HighShade = Color(1, 1, 1, 1)
+shader_parameter/MidShade = null
+shader_parameter/LowShade = null
+shader_parameter/ExtraShade = null
+shader_parameter/alpha = 1.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2rivd"]
+size = Vector2(32, 32)
+
+[node name="KeyDoor" type="StaticBody2D" node_paths=PackedStringArray("special_graphic", "collision", "hit_sound", "popup")]
+script = ExtResource("1_76lgk")
+special_graphic = NodePath("NinePatchRect")
+collision = NodePath("CollisionShape2D")
+hit_sound = NodePath("hit")
+popup = NodePath("ScorePopup")
+death_FX = "poof"
+score_value = 500
+shader = SubResource("ShaderMaterial_sm657")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+offset_left = -16.0
+offset_top = -16.0
+offset_right = 16.0
+offset_bottom = 16.0
+texture = ExtResource("2_bu86e")
+region_rect = Rect2(0, 0, 32, 32)
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[node name="lock" type="Sprite2D" parent="."]
+position = Vector2(-9.53674e-07, 1.90735e-06)
+texture = ExtResource("3_b0caq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_2rivd")
+
+[node name="hit" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_gtlvk")
+bus = &"Sound"
+
+[node name="ScorePopup" parent="." node_paths=PackedStringArray("object") instance=ExtResource("5_tcnqt")]
+object = NodePath("..")

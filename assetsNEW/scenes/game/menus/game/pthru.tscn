@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://c1c5xbmwfgw1t"]
+
+[ext_resource type="Script" path="res://assetsNEW/scenes/game/menus/game/pthru.gd" id="1_uow8i"]
+[ext_resource type="PackedScene" uid="uid://btldeni7oupaw" path="res://assetsNEW/scenes/HUD/pthru_hud.tscn" id="2_jwkmy"]
+[ext_resource type="AudioStream" uid="uid://dyitabbdpeabg" path="res://assetsNEW/sounds/game/skip.ogg" id="3_8qo34"]
+
+[node name="PThru" type="Node2D"]
+script = ExtResource("1_uow8i")
+
+[node name="PthruHUD" parent="." instance=ExtResource("2_jwkmy")]
+
+[node name="Sounds" type="Node" parent="."]
+
+[node name="skip" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("3_8qo34")
+bus = &"Sound"

@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3 uid="uid://bqsrs6wh6gc17"]
+
+[ext_resource type="Script" path="res://assetsNEW/scenes/objects/blocks/block.gd" id="1_undq3"]
+[ext_resource type="Texture2D" uid="uid://crvn6ckc7viyx" path="res://assetsNEW/graphics/gimmicks/dblock.png" id="2_a6x08"]
+[ext_resource type="AudioStream" uid="uid://sm3ogdl1e07" path="res://assetsNEW/sounds/block/dblock.ogg" id="4_gl5g4"]
+[ext_resource type="PackedScene" uid="uid://ds53r8hpj8qk0" path="res://assetsNEW/scenes/objects/misc/score_popup.tscn" id="5_sfq7e"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qidgu"]
+size = Vector2(32, 32)
+
+[node name="DBlock" type="StaticBody2D" node_paths=PackedStringArray("graphic", "collision", "hit_sound", "popup")]
+collision_mask = 3
+script = ExtResource("1_undq3")
+graphic = NodePath("Sprite2D")
+collision = NodePath("CollisionShape2D")
+hit_sound = NodePath("hit")
+popup = NodePath("ScorePopup")
+death_FX = "poof"
+score_value = 10
+dblock_score = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_a6x08")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_qidgu")
+
+[node name="hit" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_gl5g4")
+bus = &"Sound"
+
+[node name="ScorePopup" parent="." node_paths=PackedStringArray("object") instance=ExtResource("5_sfq7e")]
+object = NodePath("..")

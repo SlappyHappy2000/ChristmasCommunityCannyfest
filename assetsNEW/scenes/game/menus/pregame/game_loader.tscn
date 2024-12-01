@@ -1,0 +1,100 @@
+[gd_scene load_steps=16 format=3 uid="uid://vxqmxmctdicc"]
+
+[ext_resource type="Script" path="res://assetsNEW/scenes/game/menus/pregame/game_loader.gd" id="1_ilvka"]
+[ext_resource type="Texture2D" uid="uid://8pp17kq27kow" path="res://assetsNEW/graphics/menu/loadingsplash.png" id="2_ok6cd"]
+[ext_resource type="Texture2D" uid="uid://cm56tgnrryitb" path="res://assetsNEW/graphics/menu/prism.png" id="3_jcc5k"]
+[ext_resource type="AudioStream" uid="uid://cucxd1864rrjh" path="res://assetsNEW/music/musStartup.ogg" id="4_p71o4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7vkee"]
+atlas = ExtResource("3_jcc5k")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_284mv"]
+atlas = ExtResource("3_jcc5k")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3nutr"]
+atlas = ExtResource("3_jcc5k")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rp3an"]
+atlas = ExtResource("3_jcc5k")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7jcbk"]
+atlas = ExtResource("3_jcc5k")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6aajl"]
+atlas = ExtResource("3_jcc5k")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f7wt5"]
+atlas = ExtResource("3_jcc5k")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rsb1o"]
+atlas = ExtResource("3_jcc5k")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r7gmu"]
+atlas = ExtResource("3_jcc5k")
+region = Rect2(256, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nqkpj"]
+atlas = ExtResource("3_jcc5k")
+region = Rect2(288, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6x3ag"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7vkee")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_284mv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3nutr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rp3an")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7jcbk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6aajl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f7wt5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rsb1o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r7gmu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nqkpj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 40.0
+}]
+
+[node name="GameLoader" type="Node2D"]
+script = ExtResource("1_ilvka")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(512, 256)
+texture = ExtResource("2_ok6cd")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(736, 480)
+sprite_frames = SubResource("SpriteFrames_6x3ag")
+autoplay = "default"
+
+[node name="startup" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_p71o4")
+bus = &"Music"

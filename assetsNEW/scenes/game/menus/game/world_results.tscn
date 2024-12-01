@@ -1,0 +1,55 @@
+[gd_scene load_steps=5 format=3 uid="uid://bpp175dpw27rn"]
+
+[ext_resource type="Script" path="res://assetsNEW/scenes/game/menus/game/world_results.gd" id="1_a0gqe"]
+[ext_resource type="Texture2D" uid="uid://6ohvaljcj3mb" path="res://assetsNEW/graphics/menu/results/ontotexture.png" id="2_7ocet"]
+[ext_resource type="FontFile" uid="uid://bb152qtgi78wm" path="res://assetsNEW/fonts/times new roman.ttf" id="3_qa2nc"]
+[ext_resource type="Texture2D" uid="uid://benr4jhs7s4l7" path="res://assetsNEW/graphics/menu/results/circlegradient.png" id="4_ldwy3"]
+
+[node name="WorldResults" type="Node2D"]
+script = ExtResource("1_a0gqe")
+ID = "C-1"
+music = -2
+
+[node name="Stuff" type="Node2D" parent="."]
+
+[node name="bg" type="Sprite2D" parent="Stuff"]
+position = Vector2(512, 512)
+texture = ExtResource("2_7ocet")
+
+[node name="worldcompleted" type="Label" parent="Stuff"]
+offset_left = 320.0
+offset_top = 32.0
+offset_right = 704.0
+offset_bottom = 96.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_qa2nc")
+theme_override_font_sizes/font_size = 25
+text = "GAME_World???"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="gradient" type="Sprite2D" parent="Stuff"]
+position = Vector2(512, 768)
+texture = ExtResource("4_ldwy3")
+
+[node name="Buttons" type="Node2D" parent="Stuff"]
+
+[node name="LSButton" type="Button" parent="Stuff/Buttons"]
+offset_left = 320.0
+offset_top = 416.0
+offset_right = 448.0
+offset_bottom = 480.0
+text = "Go To Level Select"
+autowrap_mode = 3
+
+[node name="NWButton" type="Button" parent="Stuff/Buttons"]
+offset_left = 576.0
+offset_top = 416.0
+offset_right = 704.0
+offset_bottom = 480.0
+text = "Go To Next World!"
+autowrap_mode = 3
+
+[connection signal="pressed" from="Stuff/Buttons/LSButton" to="." method="_on_ls_button_pressed"]
+[connection signal="pressed" from="Stuff/Buttons/NWButton" to="." method="_on_nw_button_pressed"]

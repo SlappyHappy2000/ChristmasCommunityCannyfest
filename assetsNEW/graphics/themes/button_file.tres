@@ -1,0 +1,40 @@
+[gd_resource type="Theme" load_steps=7 format=3 uid="uid://crmq3qmpb3d5b"]
+
+[ext_resource type="FontFile" uid="uid://cxpfxvkf2sk4s" path="res://assetsNEW/fonts/windows_command_prompt.ttf" id="1_g033k"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_e805f"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_k6spy"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_61nu8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_k43ui"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8mth5"]
+
+[resource]
+default_font = ExtResource("1_g033k")
+default_font_size = 16
+Button/colors/font_color = Color(0.7, 0.7, 0.7, 1)
+Button/colors/font_disabled_color = Color(0.875, 0.875, 0.875, 0.5)
+Button/colors/font_focus_color = Color(0.95, 0.95, 0.95, 1)
+Button/colors/font_hover_color = Color(0.95, 0.95, 0.95, 1)
+Button/colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+Button/colors/font_outline_color = Color(0, 0, 0, 1)
+Button/colors/font_pressed_color = Color(1, 1, 1, 1)
+Button/colors/icon_disabled_color = Color(1, 1, 1, 0.4)
+Button/colors/icon_focus_color = Color(1, 1, 1, 1)
+Button/colors/icon_hover_color = Color(1, 1, 1, 1)
+Button/colors/icon_hover_pressed_color = Color(1, 1, 1, 1)
+Button/colors/icon_normal_color = Color(1, 1, 1, 1)
+Button/colors/icon_pressed_color = Color(1, 1, 1, 1)
+Button/constants/h_separation = 4
+Button/constants/icon_max_width = 0
+Button/constants/outline_size = 0
+Button/font_sizes/font_size = 16
+Button/fonts/font = ExtResource("1_g033k")
+Button/styles/disabled = SubResource("StyleBoxEmpty_e805f")
+Button/styles/focus = SubResource("StyleBoxEmpty_k6spy")
+Button/styles/hover = SubResource("StyleBoxEmpty_61nu8")
+Button/styles/normal = SubResource("StyleBoxEmpty_k43ui")
+Button/styles/pressed = SubResource("StyleBoxEmpty_8mth5")

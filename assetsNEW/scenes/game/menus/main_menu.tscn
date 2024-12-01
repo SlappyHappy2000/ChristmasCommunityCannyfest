@@ -1,0 +1,94 @@
+[gd_scene load_steps=9 format=3 uid="uid://ctr8g70bg2aq1"]
+
+[ext_resource type="Script" path="res://assetsNEW/scenes/game/menus/menu.gd" id="1_ts3rn"]
+[ext_resource type="PackedScene" uid="uid://ba3f1x135kcyv" path="res://assetsNEW/scenes/menu_objects/buttons/main_menu_button.tscn" id="2_1jrwv"]
+[ext_resource type="Texture2D" uid="uid://cbxp3nnmtw62a" path="res://assetsNEW/graphics/menu/metal_sheet.png" id="2_5hu82"]
+[ext_resource type="Texture2D" uid="uid://b4qt7wocralc5" path="res://assetsNEW/graphics/menu/menu_panel.png" id="2_kcf0e"]
+[ext_resource type="FontFile" uid="uid://bel3uqkt55264" path="res://assetsNEW/fonts/yoshisst.ttf" id="4_kbqgw"]
+[ext_resource type="Texture2D" uid="uid://du01fh4f2h20o" path="res://assetsNEW/graphics/menu/main_menu/icon_main_cog.png" id="4_l2ffp"]
+[ext_resource type="Texture2D" uid="uid://dp6cmt4v4xn5w" path="res://assetsNEW/graphics/menu/main_menu/icon_main_exit.png" id="5_l2wpd"]
+[ext_resource type="Texture2D" uid="uid://doysfyt0ulu1h" path="res://assetsNEW/graphics/menu/main_menu/icon_main_extra.png" id="5_x122d"]
+
+[node name="MainMenu" type="Node2D" node_paths=PackedStringArray("button_group")]
+script = ExtResource("1_ts3rn")
+ID = "B-2"
+bg_color = Color(0.25, 0.75, 1, 1)
+music = 1
+button_group = NodePath("Control/ScrollContainer/VBoxContainer")
+
+[node name="panel_bg" type="Sprite2D" parent="."]
+position = Vector2(512, 60)
+scale = Vector2(0.64, 0.2)
+texture = ExtResource("2_5hu82")
+
+[node name="panel" type="Sprite2D" parent="."]
+position = Vector2(512, 64)
+texture = ExtResource("2_kcf0e")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 256.0
+offset_top = 32.0
+offset_right = 768.0
+offset_bottom = 96.0
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("4_kbqgw")
+theme_override_font_sizes/font_size = 25
+text = "MENU_GameTitle"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 320.0
+offset_top = 128.0
+offset_right = 704.0
+offset_bottom = 512.0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+follow_focus = true
+vertical_scroll_mode = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 12
+
+[node name="MainMenuButton" parent="Control/ScrollContainer/VBoxContainer" instance=ExtResource("2_1jrwv")]
+self_modulate = Color(0.862745, 0.772549, 1, 1)
+layout_mode = 2
+GO_TO = 3
+main_text = "MENU_MainGame"
+sub_text = "MENU_MainGame_D"
+
+[node name="MainMenuButton5" parent="Control/ScrollContainer/VBoxContainer" instance=ExtResource("2_1jrwv")]
+self_modulate = Color(0.77, 1, 0.77, 1)
+layout_mode = 2
+GO_TO = 9
+does_overlay = true
+icon_texture = ExtResource("4_l2ffp")
+main_text = "MENU_Settings"
+sub_text = "MENU_Settings_D"
+
+[node name="MainMenuButton6" parent="Control/ScrollContainer/VBoxContainer" instance=ExtResource("2_1jrwv")]
+self_modulate = Color(1, 0.839, 0.77, 1)
+layout_mode = 2
+GO_TO = 11
+icon_texture = ExtResource("5_x122d")
+main_text = "MENU_Extras"
+sub_text = "MENU_Extras_D"
+
+[node name="MainMenuButton3" parent="Control/ScrollContainer/VBoxContainer" instance=ExtResource("2_1jrwv")]
+self_modulate = Color(1, 0.77, 0.888833, 1)
+layout_mode = 2
+GO_TO = 14
+icon_texture = ExtResource("5_l2wpd")
+main_text = "MENU_Exit"
+sub_text = "MENU_Exit_D"

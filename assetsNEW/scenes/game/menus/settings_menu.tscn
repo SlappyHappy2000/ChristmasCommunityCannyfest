@@ -1,0 +1,412 @@
+[gd_scene load_steps=46 format=3 uid="uid://cnl5rvtknutse"]
+
+[ext_resource type="Script" path="res://assetsNEW/scenes/game/menus/settings_menu.gd" id="1_m7w2l"]
+[ext_resource type="Texture2D" uid="uid://cqt1yl4ruvwmr" path="res://assetsNEW/graphics/menu/settings_bg.png" id="2_hwkr5"]
+[ext_resource type="PackedScene" uid="uid://dg3prkfbiat22" path="res://assetsNEW/scenes/menu_objects/buttons/fake_button.tscn" id="3_ymh77"]
+[ext_resource type="Texture2D" uid="uid://bn1m5dxbs4qmg" path="res://assetsNEW/graphics/menu/back.png" id="4_v0vr0"]
+[ext_resource type="FontFile" uid="uid://bayy88gke8rk2" path="res://assetsNEW/fonts/SuperBubble-Rpaj3.ttf" id="5_4xw2s"]
+[ext_resource type="FontFile" uid="uid://d2lt34t0wpe25" path="res://assetsNEW/fonts/Omnes Pro Bold.otf" id="5_t8hfl"]
+[ext_resource type="Theme" uid="uid://crjv5fv10tx15" path="res://assetsNEW/graphics/themes/button_1.tres" id="6_wcwj6"]
+[ext_resource type="AudioStream" uid="uid://bektb03jcgu0x" path="res://assetsNEW/sounds/player/cancel.ogg" id="7_f6ixl"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jq7p5"]
+atlas = ExtResource("2_hwkr5")
+region = Rect2(0, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a75u2"]
+atlas = ExtResource("2_hwkr5")
+region = Rect2(512, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r2w42"]
+atlas = ExtResource("2_hwkr5")
+region = Rect2(1024, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mwqso"]
+atlas = ExtResource("2_hwkr5")
+region = Rect2(1536, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_svbwa"]
+atlas = ExtResource("2_hwkr5")
+region = Rect2(2048, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2qf4j"]
+atlas = ExtResource("2_hwkr5")
+region = Rect2(2560, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i74so"]
+atlas = ExtResource("2_hwkr5")
+region = Rect2(3072, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cjk41"]
+atlas = ExtResource("2_hwkr5")
+region = Rect2(3584, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c0nqv"]
+atlas = ExtResource("2_hwkr5")
+region = Rect2(4096, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ousmm"]
+atlas = ExtResource("2_hwkr5")
+region = Rect2(4608, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sqvo0"]
+atlas = ExtResource("2_hwkr5")
+region = Rect2(5120, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c0f54"]
+atlas = ExtResource("2_hwkr5")
+region = Rect2(5632, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ie6he"]
+atlas = ExtResource("2_hwkr5")
+region = Rect2(6144, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n0ntf"]
+atlas = ExtResource("2_hwkr5")
+region = Rect2(6656, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_71ded"]
+atlas = ExtResource("2_hwkr5")
+region = Rect2(7168, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w6nsh"]
+atlas = ExtResource("2_hwkr5")
+region = Rect2(7680, 0, 512, 512)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_p21cc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jq7p5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a75u2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r2w42")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mwqso")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_svbwa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2qf4j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i74so")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cjk41")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c0nqv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ousmm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sqvo0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c0f54")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ie6he")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n0ntf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_71ded")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w6nsh")
+}],
+"loop": true,
+"name": &"default",
+"speed": 20.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dr25h"]
+atlas = ExtResource("4_v0vr0")
+region = Rect2(0, 0, 75, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m1knt"]
+atlas = ExtResource("4_v0vr0")
+region = Rect2(75, 0, 75, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_apfjf"]
+atlas = ExtResource("4_v0vr0")
+region = Rect2(150, 0, 75, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_03b5w"]
+atlas = ExtResource("4_v0vr0")
+region = Rect2(225, 0, 75, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n60ki"]
+atlas = ExtResource("4_v0vr0")
+region = Rect2(300, 0, 75, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5h8pp"]
+atlas = ExtResource("4_v0vr0")
+region = Rect2(375, 0, 75, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ppjpq"]
+atlas = ExtResource("4_v0vr0")
+region = Rect2(450, 0, 75, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cfpjv"]
+atlas = ExtResource("4_v0vr0")
+region = Rect2(525, 0, 75, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3dgib"]
+atlas = ExtResource("4_v0vr0")
+region = Rect2(600, 0, 75, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lqln5"]
+atlas = ExtResource("4_v0vr0")
+region = Rect2(675, 0, 75, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gaa03"]
+atlas = ExtResource("4_v0vr0")
+region = Rect2(750, 0, 75, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1u4ee"]
+atlas = ExtResource("4_v0vr0")
+region = Rect2(825, 0, 75, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vr5i0"]
+atlas = ExtResource("4_v0vr0")
+region = Rect2(900, 0, 75, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5o5gc"]
+atlas = ExtResource("4_v0vr0")
+region = Rect2(975, 0, 75, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_spbbu"]
+atlas = ExtResource("4_v0vr0")
+region = Rect2(1050, 0, 75, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kvdkg"]
+atlas = ExtResource("4_v0vr0")
+region = Rect2(1125, 0, 75, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pdneq"]
+atlas = ExtResource("4_v0vr0")
+region = Rect2(1200, 0, 75, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b2eg7"]
+atlas = ExtResource("4_v0vr0")
+region = Rect2(1275, 0, 75, 42)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_k068o"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dr25h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m1knt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_apfjf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_03b5w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n60ki")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5h8pp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ppjpq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cfpjv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3dgib")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lqln5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gaa03")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1u4ee")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vr5i0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5o5gc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_spbbu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kvdkg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pdneq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b2eg7")
+}],
+"loop": true,
+"name": &"default",
+"speed": 20.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kepbn"]
+size = Vector2(64, 40)
+
+[node name="SettingsMenu" type="Node2D"]
+script = ExtResource("1_m7w2l")
+ID = "B-7"
+music = -1
+pause_last_scene = false
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 15
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer"]
+modulate = Color(0, 0.866667, 1, 1)
+position = Vector2(512, 256)
+sprite_frames = SubResource("SpriteFrames_p21cc")
+autoplay = "default"
+
+[node name="FakeButton" parent="CanvasLayer" node_paths=PackedStringArray("parent") instance=ExtResource("3_ymh77")]
+position = Vector2(296, 24)
+parent = NodePath("../..")
+GO_TO = 2
+overlay_back = true
+
+[node name="AnimatedSprite2D" parent="CanvasLayer/FakeButton" index="0"]
+sprite_frames = SubResource("SpriteFrames_k068o")
+autoplay = "default"
+
+[node name="CollisionShape2D" parent="CanvasLayer/FakeButton" index="1"]
+shape = SubResource("RectangleShape2D_kepbn")
+
+[node name="Header" type="Label" parent="CanvasLayer"]
+offset_left = 256.0
+offset_right = 768.0
+offset_bottom = 64.0
+theme_override_fonts/font = ExtResource("5_t8hfl")
+text = "ROBERT returns"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="FullscreenText" type="Label" parent="CanvasLayer"]
+offset_left = 256.0
+offset_top = 80.0
+offset_right = 384.0
+offset_bottom = 112.0
+mouse_filter = 0
+theme_override_fonts/font = ExtResource("5_4xw2s")
+theme_override_font_sizes/font_size = 12
+text = "Fullscreen:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SoundVolumeText" type="Label" parent="CanvasLayer"]
+offset_left = 456.0
+offset_top = 104.0
+offset_right = 648.0
+offset_bottom = 136.0
+mouse_filter = 0
+theme_override_fonts/font = ExtResource("5_4xw2s")
+theme_override_font_sizes/font_size = 12
+text = "Sound Volume: 100%"
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="MusicVolumeText" type="Label" parent="CanvasLayer"]
+offset_left = 456.0
+offset_top = 80.0
+offset_right = 648.0
+offset_bottom = 112.0
+mouse_filter = 0
+theme_override_fonts/font = ExtResource("5_4xw2s")
+theme_override_font_sizes/font_size = 12
+text = "Music Volume: 100%"
+vertical_alignment = 1
+
+[node name="MasterVolumeText" type="Label" parent="CanvasLayer"]
+offset_left = 456.0
+offset_top = 56.0
+offset_right = 648.0
+offset_bottom = 88.0
+mouse_filter = 0
+theme_override_fonts/font = ExtResource("5_4xw2s")
+theme_override_font_sizes/font_size = 12
+text = "Master Volume: 100%"
+vertical_alignment = 1
+
+[node name="Settings" type="Node2D" parent="CanvasLayer"]
+
+[node name="FullscreenSwitch" type="CheckButton" parent="CanvasLayer/Settings"]
+modulate = Color(0.8, 1, 0.856667, 1)
+offset_left = 384.0
+offset_top = 72.0
+offset_right = 448.0
+offset_bottom = 120.0
+theme = ExtResource("6_wcwj6")
+
+[node name="SoundSlider" type="HSlider" parent="CanvasLayer/Settings"]
+offset_left = 632.0
+offset_top = 112.0
+offset_right = 760.0
+offset_bottom = 128.0
+theme = ExtResource("6_wcwj6")
+max_value = 20.0
+value = 20.0
+
+[node name="MusicSlider" type="HSlider" parent="CanvasLayer/Settings"]
+offset_left = 632.0
+offset_top = 88.0
+offset_right = 760.0
+offset_bottom = 104.0
+theme = ExtResource("6_wcwj6")
+max_value = 20.0
+value = 20.0
+
+[node name="MasterSlider" type="HSlider" parent="CanvasLayer/Settings"]
+offset_left = 632.0
+offset_top = 64.0
+offset_right = 760.0
+offset_bottom = 80.0
+theme = ExtResource("6_wcwj6")
+max_value = 20.0
+value = 20.0
+
+[node name="SaveSet" type="Button" parent="CanvasLayer"]
+offset_left = 384.0
+offset_top = 448.0
+offset_right = 640.0
+offset_bottom = 496.0
+theme = ExtResource("6_wcwj6")
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("5_4xw2s")
+text = "SAVE THESE SETTINGS"
+
+[node name="Sounds" type="Node" parent="."]
+
+[node name="sound" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("7_f6ixl")
+bus = &"Sound"
+
+[connection signal="pressed" from="CanvasLayer/Settings/FullscreenSwitch" to="." method="_on_fullscreen_switch_pressed"]
+[connection signal="value_changed" from="CanvasLayer/Settings/SoundSlider" to="." method="_on_sound_slider_value_changed"]
+[connection signal="value_changed" from="CanvasLayer/Settings/MusicSlider" to="." method="_on_music_slider_value_changed"]
+[connection signal="value_changed" from="CanvasLayer/Settings/MasterSlider" to="." method="_on_master_slider_value_changed"]
+[connection signal="pressed" from="CanvasLayer/SaveSet" to="." method="_on_save_set_pressed"]
+
+[editable path="CanvasLayer/FakeButton"]

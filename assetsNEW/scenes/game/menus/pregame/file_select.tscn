@@ -1,0 +1,114 @@
+[gd_scene load_steps=5 format=3 uid="uid://d14uhdlbl3tp8"]
+
+[ext_resource type="Script" path="res://assetsNEW/scenes/game/menus/pregame/file_select.gd" id="1_fpbd5"]
+[ext_resource type="Texture2D" uid="uid://ca61xbjxyu1lr" path="res://assetsNEW/graphics/misc/blank_square.png" id="2_s5kxv"]
+[ext_resource type="FontFile" uid="uid://cxpfxvkf2sk4s" path="res://assetsNEW/fonts/windows_command_prompt.ttf" id="3_lpv32"]
+[ext_resource type="Theme" uid="uid://crmq3qmpb3d5b" path="res://assetsNEW/graphics/themes/button_file.tres" id="4_d5i73"]
+
+[node name="FileSelect" type="Node2D" node_paths=PackedStringArray("button_group")]
+z_index = 20
+script = ExtResource("1_fpbd5")
+ID = "A-1"
+button_group = NodePath("Control/ScrollContainer/VBoxContainer")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(384, 256)
+scale = Vector2(192, 128)
+texture = ExtResource("2_s5kxv")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 752.0
+offset_bottom = 64.0
+theme_override_colors/font_color = Color(0.7, 0.7, 0.7, 1)
+theme_override_fonts/font = ExtResource("3_lpv32")
+theme_override_font_sizes/font_size = 16
+text = "Uncanny Cat Golf
+Type the desired Username and select action."
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 448.0
+offset_top = 64.0
+offset_right = 704.0
+offset_bottom = 480.0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+follow_focus = true
+vertical_scroll_mode = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/ScrollContainer"]
+layout_mode = 2
+
+[node name="UserTextbox" type="LineEdit" parent="."]
+offset_left = 16.0
+offset_top = 64.0
+offset_right = 272.0
+offset_bottom = 96.0
+theme = ExtResource("4_d5i73")
+placeholder_text = "Type Username Here"
+caret_blink = true
+
+[node name="Actions" type="Node2D" parent="."]
+position = Vector2(16, 112)
+
+[node name="0" type="Button" parent="Actions"]
+offset_right = 112.0
+offset_bottom = 16.0
+theme = ExtResource("4_d5i73")
+text = "Create User"
+alignment = 0
+
+[node name="1" type="Button" parent="Actions"]
+offset_top = 40.0
+offset_right = 112.0
+offset_bottom = 56.0
+theme = ExtResource("4_d5i73")
+text = "Load User"
+alignment = 0
+
+[node name="2" type="Button" parent="Actions"]
+offset_top = 136.0
+offset_right = 112.0
+offset_bottom = 152.0
+theme = ExtResource("4_d5i73")
+text = "Delete User"
+alignment = 0
+
+[node name="Confirmation" type="Node2D" parent="."]
+visible = false
+
+[node name="0" type="Button" parent="Confirmation"]
+offset_left = 32.0
+offset_top = 288.0
+offset_right = 64.0
+offset_bottom = 312.0
+theme = ExtResource("4_d5i73")
+text = "Yes"
+
+[node name="1" type="Button" parent="Confirmation"]
+offset_left = 128.0
+offset_top = 288.0
+offset_right = 160.0
+offset_bottom = 312.0
+theme = ExtResource("4_d5i73")
+text = "No"
+
+[node name="LoadStatus" type="Label" parent="."]
+offset_left = 16.0
+offset_top = 320.0
+offset_right = 272.0
+offset_bottom = 512.0
+theme_override_colors/font_color = Color(0.7, 0.7, 0.7, 1)
+theme_override_fonts/font = ExtResource("3_lpv32")
+theme_override_font_sizes/font_size = 16
+autowrap_mode = 3

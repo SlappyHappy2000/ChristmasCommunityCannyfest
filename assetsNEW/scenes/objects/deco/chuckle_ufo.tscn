@@ -1,0 +1,39 @@
+[gd_scene load_steps=7 format=3 uid="uid://5jliwg5pvtcx"]
+
+[ext_resource type="Texture2D" uid="uid://dft8g2fggq2x5" path="res://assetsNEW/graphics/stage/deco/W3/chuckle_ufo.png" id="1_nf4gh"]
+[ext_resource type="Script" path="res://assetsNEW/scenes/objects/deco/chuckle_ufo.gd" id="2_xk5eb"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_urvjq"]
+atlas = ExtResource("1_nf4gh")
+region = Rect2(0, 0, 700, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_33tkq"]
+atlas = ExtResource("1_nf4gh")
+region = Rect2(0, 128, 700, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pn1n7"]
+atlas = ExtResource("1_nf4gh")
+region = Rect2(0, 256, 700, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mbuh7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_urvjq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_33tkq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pn1n7")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Chuckle UFO" type="AnimatedSprite2D"]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_mbuh7")
+autoplay = "default"
+script = ExtResource("2_xk5eb")

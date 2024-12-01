@@ -1,0 +1,143 @@
+[gd_scene load_steps=20 format=3 uid="uid://cyt4gpulwqebl"]
+
+[ext_resource type="Script" path="res://assetsNEW/scenes/objects/collectibles/smiley_ring.gd" id="1_7qp0v"]
+[ext_resource type="Texture2D" uid="uid://bac1olg8py8u7" path="res://assetsNEW/graphics/collectibles/smiley_ring.png" id="2_aqkjn"]
+[ext_resource type="AudioStream" uid="uid://cx1rk14y1gois" path="res://assetsNEW/sounds/collectibles/smileyring.ogg" id="3_7phk2"]
+[ext_resource type="AudioStream" uid="uid://bk5e85kv34ga4" path="res://assetsNEW/sounds/collectibles/smileytimer.ogg" id="3_e5sc1"]
+[ext_resource type="FontFile" uid="uid://ut6pykptcdlj" path="res://assetsNEW/fonts/Arial Rounded MT Bold Regular.ttf" id="3_f6fq4"]
+[ext_resource type="AudioStream" uid="uid://cffth8a5lgpo1" path="res://assetsNEW/sounds/collectibles/smileyWin.ogg" id="5_prrnk"]
+[ext_resource type="AudioStream" uid="uid://doamhhur6n3du" path="res://assetsNEW/sounds/collectibles/smileyFail.ogg" id="6_bibko"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h7t5c"]
+atlas = ExtResource("2_aqkjn")
+region = Rect2(0, 0, 109, 109)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xjk63"]
+atlas = ExtResource("2_aqkjn")
+region = Rect2(109, 0, 109, 109)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yxfvv"]
+atlas = ExtResource("2_aqkjn")
+region = Rect2(218, 0, 109, 109)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8cqp1"]
+atlas = ExtResource("2_aqkjn")
+region = Rect2(327, 0, 109, 109)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eueld"]
+atlas = ExtResource("2_aqkjn")
+region = Rect2(436, 0, 109, 109)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3jdgo"]
+atlas = ExtResource("2_aqkjn")
+region = Rect2(545, 0, 109, 109)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p0ahw"]
+atlas = ExtResource("2_aqkjn")
+region = Rect2(654, 0, 109, 109)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p2o2p"]
+atlas = ExtResource("2_aqkjn")
+region = Rect2(763, 0, 109, 109)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k8gc7"]
+atlas = ExtResource("2_aqkjn")
+region = Rect2(872, 0, 109, 109)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_11kka"]
+atlas = ExtResource("2_aqkjn")
+region = Rect2(981, 0, 109, 109)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_t0or6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h7t5c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xjk63")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yxfvv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8cqp1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eueld")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3jdgo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p0ahw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p2o2p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k8gc7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_11kka")
+}],
+"loop": true,
+"name": &"default",
+"speed": 15.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bnmmv"]
+radius = 24.0
+
+[node name="SmileyRing" type="Area2D" node_paths=PackedStringArray("timer", "timeSound", "timeText", "collect_sound", "graphic", "collision")]
+collision_layer = 16
+collision_mask = 2
+script = ExtResource("1_7qp0v")
+timer = NodePath("Timer")
+timeSound = NodePath("timeSound")
+timeText = NodePath("TimeText")
+collect_sound = NodePath("collect")
+graphic = NodePath("AnimatedSprite2D")
+collision = NodePath("CollisionShape2D")
+death_FX = "NULL"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(9.53674e-07, -4.29153e-06)
+scale = Vector2(0.587156, 0.587156)
+sprite_frames = SubResource("SpriteFrames_t0or6")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_bnmmv")
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[node name="TimeText" type="Label" parent="."]
+visible = false
+offset_left = -64.0
+offset_top = -64.0
+offset_right = 64.0
+offset_bottom = 64.0
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("3_f6fq4")
+theme_override_font_sizes/font_size = 20
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="collect" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_7phk2")
+bus = &"Sound"
+
+[node name="timeSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_e5sc1")
+bus = &"Sound"
+
+[node name="win" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_prrnk")
+bus = &"Sound"
+
+[node name="lose" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_bibko")
+bus = &"Sound"
