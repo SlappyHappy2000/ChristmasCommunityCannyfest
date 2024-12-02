@@ -1,8 +1,6 @@
 extends GameScene
 class_name Menu
 
-var parent : Manager
-
 @export var ID : String
 @export var bg_color : Color
 @export var music : Master.Music

@@ -23,7 +23,7 @@ func get_level():
 	return level_ID.get_slice("-", 1)
 
 func format(format_str : String):
-	return format_str % [highscore, GS.format_seconds(besttime), bestrank]
+	return format_str % [highscore, Utils.format_seconds(besttime), bestrank]
 
 func duplicate(deep : bool):
 	if deep:

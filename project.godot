@@ -21,10 +21,6 @@ boot_splash/use_filter=false
 config/icon="res://assetsNEW/graphics/player/player_skins/pskin0.png"
 boot_splash/minimum_display_time=3000
 
-[autoload]
-
-GS="*res://assetsNEW/scenes/utils/global_variables.gd"
-
 [display]
 
 window/size/viewport_width=768

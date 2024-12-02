@@ -88,7 +88,7 @@ func _ready():
 func _process(delta):
 	if level_active:
 		time_elapsed += delta
-		HUD.time.text = GS.format_seconds(time_elapsed)
+		HUD.time.text = Utils.format_seconds(time_elapsed)
 		if time_elapsed > on_time + 20:
 			HUD.time.modulate = Color(1, 0, 0, 1)
 		elif time_elapsed >= on_time:
@@ -173,7 +173,7 @@ func win():
 	
 	print(time_elapsed)
 	time_bonus = maxi(2500 - 100 * (time_elapsed - on_time), 0)
-	HUD.tTime.text = tr("GAME_Time").format({"time" : GS.format_seconds(time_elapsed)})
+	HUD.tTime.text = tr("GAME_Time").format({"time" : Utils.format_seconds(time_elapsed)})
 	if time_elapsed >= on_time:
 		var tardy := int(time_elapsed - on_time)
 		if tardy < 1 :
