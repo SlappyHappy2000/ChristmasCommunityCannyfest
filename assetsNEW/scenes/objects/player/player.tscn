@@ -1,7 +1,7 @@
 [gd_scene load_steps=18 format=3 uid="uid://b68tiqag02djh"]
 
 [ext_resource type="Script" path="res://assetsNEW/scenes/objects/player/player.gd" id="1_7ohvu"]
-[ext_resource type="Texture2D" uid="uid://dgfcjdvl6aen1" path="res://assetsNEW/graphics/player/player_skins/pskinNEW.png" id="2_gdq3b"]
+[ext_resource type="Texture2D" uid="uid://dgfcjdvl6aen1" path="res://assetsNEW/graphics/player/player_skins/pskin0.png" id="2_gdq3b"]
 [ext_resource type="Script" path="res://assetsNEW/scenes/objects/player/PSpawn.gd" id="4_qjuwv"]
 [ext_resource type="Script" path="res://assetsNEW/scenes/objects/player/PIdle.gd" id="5_qf273"]
 [ext_resource type="Script" path="res://assetsNEW/scenes/objects/player/PMoving.gd" id="6_gcm8k"]

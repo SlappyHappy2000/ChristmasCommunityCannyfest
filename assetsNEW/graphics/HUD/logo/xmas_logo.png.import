@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cdly3g3kjhwnt"
-path="res://.godot/imported/pskinOLD.png-c775ac91140ab556b5fdc636a8842d4f.ctex"
+uid="uid://bglq574sx0i53"
+path="res://.godot/imported/xmas_logo.png-2bde6969739f765380ccc6eac56b9a77.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assetsNEW/graphics/player/player_skins/pskinOLD.png"
-dest_files=["res://.godot/imported/pskinOLD.png-c775ac91140ab556b5fdc636a8842d4f.ctex"]
+source_file="res://assetsNEW/graphics/HUD/logo/xmas_logo.png"
+dest_files=["res://.godot/imported/xmas_logo.png-2bde6969739f765380ccc6eac56b9a77.ctex"]
 
 [params]
 

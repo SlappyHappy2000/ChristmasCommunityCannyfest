@@ -1,8 +1,8 @@
 [gd_scene load_steps=49 format=3 uid="uid://cqebwf8uypjsu"]
 
 [ext_resource type="Script" path="res://assetsNEW/scenes/game/menus/title_screen.gd" id="1_gdhwh"]
-[ext_resource type="Texture2D" uid="uid://24tybug7sy4" path="res://assetsNEW/graphics/HUD/logo/logo_en.png" id="2_opbr2"]
 [ext_resource type="Texture2D" uid="uid://7fs3iam420p5" path="res://assetsNEW/graphics/menu/title_bg_front.png" id="2_pby5j"]
+[ext_resource type="Texture2D" uid="uid://bglq574sx0i53" path="res://assetsNEW/graphics/HUD/logo/xmas_logo.png" id="3_pjpk2"]
 [ext_resource type="FontFile" uid="uid://d2lt34t0wpe25" path="res://assetsNEW/fonts/Omnes Pro Bold.otf" id="4_nv7jc"]
 [ext_resource type="AudioStream" uid="uid://qdys1unle2ea" path="res://assetsNEW/music/musW1.ogg" id="5_2kq0d"]
 [ext_resource type="FontFile" uid="uid://ut6pykptcdlj" path="res://assetsNEW/fonts/Arial Rounded MT Bold Regular.ttf" id="6_sr6ng"]
@@ -307,7 +307,7 @@ frame_progress = 0.48703
 
 [node name="Title" type="Sprite2D" parent="."]
 position = Vector2(512, 192)
-texture = ExtResource("2_opbr2")
+texture = ExtResource("3_pjpk2")
 
 [node name="Label" type="RichTextLabel" parent="."]
 offset_left = 256.0

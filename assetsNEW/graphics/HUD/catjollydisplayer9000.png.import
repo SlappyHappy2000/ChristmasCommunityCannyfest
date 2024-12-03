@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dgfcjdvl6aen1"
-path="res://.godot/imported/pskinNEW.png-dc6a6efaa90604f6455e5ae1c6111f34.ctex"
+uid="uid://dgcwfb6i387ne"
+path="res://.godot/imported/catjollydisplayer9000.png-cb9278f3b6d1b7be2d9b623f7abddbe9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assetsNEW/graphics/player/player_skins/pskinNEW.png"
-dest_files=["res://.godot/imported/pskinNEW.png-dc6a6efaa90604f6455e5ae1c6111f34.ctex"]
+source_file="res://assetsNEW/graphics/HUD/catjollydisplayer9000.png"
+dest_files=["res://.godot/imported/catjollydisplayer9000.png-cb9278f3b6d1b7be2d9b623f7abddbe9.ctex"]
 
 [params]
 

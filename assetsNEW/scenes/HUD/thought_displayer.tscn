@@ -1,8 +1,8 @@
 [gd_scene load_steps=9 format=3 uid="uid://nd3b20iqlwk0"]
 
 [ext_resource type="Script" path="res://assetsNEW/scenes/HUD/thought_displayer.gd" id="1_traex"]
-[ext_resource type="Texture2D" uid="uid://ds2qrousbctxj" path="res://assetsNEW/graphics/HUD/catthoughtidisplayer9000.png" id="1_y1fvo"]
 [ext_resource type="Texture2D" uid="uid://bst7kbotp1kvp" path="res://assetsNEW/graphics/HUD/thoughts/Static/static.png" id="2_3d48t"]
+[ext_resource type="Texture2D" uid="uid://dgcwfb6i387ne" path="res://assetsNEW/graphics/HUD/catjollydisplayer9000.png" id="3_e3lob"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_a5cc5"]
 atlas = ExtResource("2_3d48t")
@@ -52,16 +52,16 @@ offset_bottom = 432.0
 color = Color(0.0911214, 0.0911215, 0.0911214, 1)
 
 [node name="Thought" type="Sprite2D" parent="."]
-position = Vector2(95, 387)
+position = Vector2(116, 397)
 scale = Vector2(1.01, 1.01)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(95, 387)
+position = Vector2(116, 397)
 scale = Vector2(1.01, 1.01)
 sprite_frames = SubResource("SpriteFrames_wesb0")
 autoplay = "default"
 
 [node name="ThoughtBubble" type="Sprite2D" parent="."]
-position = Vector2(96, 416)
-scale = Vector2(0.148607, 0.148607)
-texture = ExtResource("1_y1fvo")
+position = Vector2(124, 416)
+scale = Vector2(0.393651, 0.407643)
+texture = ExtResource("3_e3lob")

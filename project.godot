@@ -10,8 +10,8 @@ config_version=5
 
 [application]
 
-config/name="Uncanny Cat Golf"
-config/description="play. now."
+config/name="Christmas Community Cannyfest"
+config/description="holiday cheer. now."
 run/main_scene="res://assetsNEW/scenes/master.tscn"
 config/use_custom_user_dir=true
 config/custom_user_dir_name="Uncanny Cat Golf"
