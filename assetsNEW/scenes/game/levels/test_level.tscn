@@ -720,6 +720,7 @@ level = NodePath("../..")
 [node name="WinConfetti" type="AnimatedSprite2D" parent="."]
 visible = false
 sprite_frames = SubResource("SpriteFrames_i4doj")
+frame_progress = 0.410555
 
 [node name="LevelHUD" parent="." node_paths=PackedStringArray("level") instance=ExtResource("11_hjaai")]
 level = NodePath("..")
