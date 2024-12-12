@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://brgadk3ye5am7"]
+
+[ext_resource type="Texture2D" uid="uid://cj6hj7xu3bu3p" path="res://assetsNEW/scenes/game/levels/regular/w1/1_22/apple.png" id="1_eq7ce"]
+[ext_resource type="Script" path="res://assetsNEW/scenes/game/levels/regular/w1/1_22/apple.gd" id="1_qe6sy"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5vidu"]
+
+[node name="Area2D" type="Area2D" node_paths=PackedStringArray("collision")]
+collision_layer = 16
+collision_mask = 2
+script = ExtResource("1_qe6sy")
+collision = NodePath("CollisionShape2D")
+death_FX = "NULL"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(16, 16)
+scale = Vector2(0.32, 0.32)
+texture = ExtResource("1_eq7ce")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+light_mask = 2
+visibility_layer = 9
+position = Vector2(16, 16)
+shape = SubResource("CircleShape2D_5vidu")
