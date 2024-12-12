@@ -1243,7 +1243,6 @@ offset_bottom = 1248.0
 color = Color(0, 0, 0, 1)
 
 [node name="question mark bg" type="Sprite2D" parent="."]
-visible = false
 modulate = Color(1, 1, 1, 0.0588235)
 z_index = -20
 position = Vector2(1.52588e-05, -2.12193e-05)
