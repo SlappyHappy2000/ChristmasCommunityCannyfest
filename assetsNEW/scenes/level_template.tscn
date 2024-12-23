@@ -428,8 +428,13 @@ animations = [{
 "speed": 25.0
 }]
 
-[node name="LevelTemplate" type="Node2D"]
+[node name="LevelTemplate" type="Node2D" node_paths=PackedStringArray("HUD", "camera", "player", "uncannies", "win_confetti")]
 script = ExtResource("1_cqm8f")
+HUD = NodePath("LevelHUD")
+camera = NodePath("Camera2D")
+player = NodePath("Player/Player")
+uncannies = NodePath("Uncannies/Ghost")
+win_confetti = NodePath("WinConfetti")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
@@ -452,8 +457,9 @@ position = Vector2(192, 192)
 
 [node name="Player" type="Node2D" parent="."]
 
-[node name="Player" parent="Player" instance=ExtResource("3_5ktq7")]
+[node name="Player" parent="Player" node_paths=PackedStringArray("level") instance=ExtResource("3_5ktq7")]
 position = Vector2(-224, -224)
+level = NodePath("../..")
 
 [node name="Uncannies" type="Node2D" parent="."]
 
