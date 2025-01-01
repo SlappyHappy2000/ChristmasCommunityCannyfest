@@ -1,4 +1,4 @@
-[gd_scene load_steps=75 format=4 uid="uid://bte4f113vvass"]
+[gd_scene load_steps=74 format=4 uid="uid://bte4f113vvass"]
 
 [ext_resource type="Script" path="res://assetsNEW/scenes/game/levels/level.gd" id="1_23ih3"]
 [ext_resource type="Shader" path="res://assetsNEW/graphics/shaders/colorswap.gdshader" id="2_gad3s"]
@@ -10,7 +10,6 @@
 [ext_resource type="Texture2D" uid="uid://cq0dpm1bdy3g5" path="res://assetsNEW/graphics/stage/goal/winconfetti.png" id="5_ln3fi"]
 [ext_resource type="PackedScene" uid="uid://bk4dby1mblf28" path="res://assetsNEW/scenes/HUD/level_hud.tscn" id="6_ogh8o"]
 [ext_resource type="PackedScene" uid="uid://ea5qc4x5roc5" path="res://assetsNEW/scenes/objects/baddies/skull.tscn" id="9_cgp8r"]
-[ext_resource type="PackedScene" uid="uid://x3mtyoq3osrw" path="res://assetsNEW/scenes/objects/gimmicks/jump_pad.tscn" id="9_yjtal"]
 [ext_resource type="PackedScene" uid="uid://olhdu3o67heb" path="res://assetsNEW/scenes/objects/collectibles/speed_token.tscn" id="10_2hth7"]
 [ext_resource type="PackedScene" uid="uid://piiexm01bud6" path="res://assetsNEW/scenes/objects/collectibles/coin.tscn" id="11_lbto2"]
 
@@ -475,12 +474,6 @@ level = NodePath("../..")
 position = Vector2(-416, 0)
 level = NodePath("../../..")
 
-[node name="Skull" parent="Tiles" node_paths=PackedStringArray("level", "target") instance=ExtResource("9_cgp8r")]
-position = Vector2(0, 88)
-level = NodePath("../..")
-chaser = true
-target = NodePath("../../Player/Player")
-
 [node name="Goal" parent="." node_paths=PackedStringArray("level") instance=ExtResource("2_s2ixf")]
 position = Vector2(0, -188)
 level = NodePath("..")
@@ -496,7 +489,7 @@ level = NodePath("..")
 [node name="Player" type="Node2D" parent="."]
 
 [node name="Player" parent="Player" node_paths=PackedStringArray("level") instance=ExtResource("3_8regp")]
-position = Vector2(0, 170)
+position = Vector2(0, 176)
 level = NodePath("../..")
 
 [node name="Uncannies" type="Node2D" parent="."]
@@ -514,6 +507,24 @@ sprite_frames = SubResource("SpriteFrames_yn3sd")
 visible = false
 level = NodePath("..")
 
+[node name="Skull7" parent="." node_paths=PackedStringArray("level", "target") instance=ExtResource("9_cgp8r")]
+position = Vector2(-192, -32)
+level = NodePath("..")
+chaser = true
+target = NodePath("../Player/Player")
+
+[node name="Skull8" parent="." node_paths=PackedStringArray("level", "target") instance=ExtResource("9_cgp8r")]
+position = Vector2(-40, -192)
+level = NodePath("..")
+chaser = true
+target = NodePath("../Player/Player")
+
+[node name="Skull9" parent="." node_paths=PackedStringArray("level", "target") instance=ExtResource("9_cgp8r")]
+position = Vector2(0, 88)
+level = NodePath("..")
+chaser = true
+target = NodePath("../Player/Player")
+
 [node name="Skull4" parent="." node_paths=PackedStringArray("level", "target") instance=ExtResource("9_cgp8r")]
 position = Vector2(104, -168)
 level = NodePath("..")
@@ -522,6 +533,18 @@ target = NodePath("../Player/Player")
 
 [node name="Skull3" parent="." node_paths=PackedStringArray("level", "target") instance=ExtResource("9_cgp8r")]
 position = Vector2(-104, -168)
+level = NodePath("..")
+chaser = true
+target = NodePath("../Player/Player")
+
+[node name="Skull6" parent="." node_paths=PackedStringArray("level", "target") instance=ExtResource("9_cgp8r")]
+position = Vector2(-64, 88)
+level = NodePath("..")
+chaser = true
+target = NodePath("../Player/Player")
+
+[node name="Skull5" parent="." node_paths=PackedStringArray("level", "target") instance=ExtResource("9_cgp8r")]
+position = Vector2(96, 208)
 level = NodePath("..")
 chaser = true
 target = NodePath("../Player/Player")
@@ -561,7 +584,3 @@ level = NodePath("..")
 [node name="Coin4" parent="." node_paths=PackedStringArray("level") instance=ExtResource("11_lbto2")]
 position = Vector2(167, -87)
 level = NodePath("..")
-
-[node name="JumpPad" parent="." instance=ExtResource("9_yjtal")]
-position = Vector2(-1, -75)
-direction = 270.0
